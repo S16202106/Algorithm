@@ -1,6 +1,9 @@
 package com.company;
 
-import javax.swing.tree.TreeNode;
+
+import leetcode.TreeNode;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class layerForeachTree {
@@ -11,8 +14,20 @@ public class layerForeachTree {
         }
 
         public void layerTree(List<List<Integer>> res, List<TreeNode> track) {
+            if (track.size() > 0) {
+                List<Integer> temp = new ArrayList<>();
+                List<TreeNode> next = new ArrayList<>();
+                for (TreeNode t : track) {
+                    temp.add(t.val);
+                    if (null != t.left)
+                        next.add(t.left);
+                    if (null != t.right)
+                        next.add(t.right);
+                }
+                res.add(temp);
+                layerTree(res, next);
+            }
 
-            layerTree(res, track);
         }
 
     }

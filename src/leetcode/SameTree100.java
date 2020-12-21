@@ -1,3 +1,5 @@
+import leetcode.TreeNode;
+
 public class SameTree100 {
     /**
      * Definition for a binary tree node.
