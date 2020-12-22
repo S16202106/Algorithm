@@ -46,6 +46,10 @@ public class DelGame {
         return back(track, res, start + 1);
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }
 
 //
